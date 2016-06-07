@@ -1,4 +1,4 @@
-package com.omnigon.qatests.pgat;
+package com.omnigon.qatests.pgat.tests;
 
 import com.omnigon.qatests.steps.serenity.EndUserSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
@@ -30,7 +30,8 @@ public class LeaderboardTest {
     }
 
 }
-*/Test Case:
+   /*
+Test Case:
         Steps:
         1. Navigate to http://www.pgatour.com/
         2. Select Leaderboard  in Global Navigation
@@ -40,4 +41,5 @@ public class LeaderboardTest {
         1. Page is displayed
         2. Leaderboard page is displayed\
         3. Title is displayed
-        4. Social icons are displayed/*
+        4. Social icons are displayed
+        */
