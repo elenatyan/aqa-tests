@@ -24,7 +24,7 @@ public class EndUserSteps extends ScenarioSteps {
     }
 
     @Step
-    public void should_see_definition(String definition) {
+    public void should_see_page(String definition) {
         assertThat(corePage.getDefinitions(), hasItem(containsString(definition)));
     }
 
@@ -34,8 +34,9 @@ public class EndUserSteps extends ScenarioSteps {
     }
 
     @Step
-    public void looks_for(String term) {
-        enters(term);
+    public void looks_for(String title) {
+        enters(title);
         starts_search();
     }
+
 }

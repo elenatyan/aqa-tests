@@ -12,7 +12,7 @@ import java.util.List;
 
 import static ch.lambdaj.Lambda.convert;
 
-@DefaultUrl("http://www.pgatour.com/e")
+@DefaultUrl("http://www.pgatour.com/")
 public class CorePage extends PageObject {
 
     @FindBy(name="search")

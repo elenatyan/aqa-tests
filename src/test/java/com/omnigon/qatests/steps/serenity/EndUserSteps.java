@@ -1,6 +1,7 @@
 package com.omnigon.qatests.steps.serenity;
 
 import com.omnigon.qatests.pages.DictionaryPage;
+import com.omnigon.qatests.pgat.pages.CorePage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
@@ -10,26 +11,25 @@ import static org.hamcrest.Matchers.hasItem;
 
 public class EndUserSteps extends ScenarioSteps {
 
-    DictionaryPage dictionaryPage;
+    CorePage corePage;
 
     @Step
-    public void enters(String keyword) {
-        dictionaryPage.enter_keywords(keyword);
+    public void enters(String keyword) { corePage.enter_keywords(keyword);
     }
 
     @Step
     public void starts_search() {
-        dictionaryPage.lookup_terms();
+        corePage.lookup_terms();
     }
 
     @Step
     public void should_see_definition(String definition) {
-        assertThat(dictionaryPage.getDefinitions(), hasItem(containsString(definition)));
+        assertThat(corePage.getDefinitions(), hasItem(containsString(definition)));
     }
 
     @Step
     public void is_the_home_page() {
-        dictionaryPage.open();
+        corePage.open();
     }
 
     @Step
