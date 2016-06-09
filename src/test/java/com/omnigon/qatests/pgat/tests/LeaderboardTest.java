@@ -2,11 +2,8 @@ package com.omnigon.qatests.pgat.tests;
 
 import com.omnigon.qatests.steps.serenity.EndUserSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Issue;
 import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.Pending;
 import net.thucydides.core.annotations.Steps;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
@@ -22,13 +19,25 @@ public class LeaderboardTest {
     public EndUserSteps elena;
 
     @Test
-    public void searching_by_keyword_leaderboard_should_display_the_corresponding_page() {
-        elena.is_the_home_page();
-        elena.looks_for("//*[@class='nav-container']//*[contains(@href,'leaderboard')]");
-        elena.looks_for("//*[@class='popover-content']//*[@class='link-box']//*[@class='facebook']");
+    public void click_by_menu_leaderboard_should_display_the_corresponding_page() {
+        elena.open_home_page();
+        elena.open_leaderbord_page();
+
+    }
+    @Test
+    public void check_title() {
+        elena.is_the_leaderboard_page();
+        elena.looks_for("//*[@class='name']//*[contains(@href,'tournament')]");
         elena.should_see_page("leaderboard");
 
     }
+    Test
+    public void check_social_icon() {
+        elena.is_the_leaderboard_page();
+        elena.looks_for("//*[@class='popover-content']//*[@class='link-box']//*[@class='facebook']");
+        elena.should_see_page("leaderboard");
+    }
+
 
 }
    /*

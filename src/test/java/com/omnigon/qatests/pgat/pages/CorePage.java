@@ -42,4 +42,7 @@ public class CorePage extends PageObject {
             }
         };
     }
+    public void navigate_to_leaderbord(String s) {
+        open.leaderboard
+    }
 }

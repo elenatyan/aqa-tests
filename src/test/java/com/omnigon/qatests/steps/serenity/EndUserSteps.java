@@ -8,6 +8,8 @@ import net.thucydides.core.steps.ScenarioSteps;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.hasItem;
+//import static org.junit.Assert.assertEquals;
+//import static org.junit.Assert.assertTrue;
 
 public class EndUserSteps extends ScenarioSteps {
 
@@ -25,10 +27,12 @@ public class EndUserSteps extends ScenarioSteps {
     @Step
     public void should_see_definition(String definition) {
         assertThat(corePage.getDefinitions(), hasItem(containsString(definition)));
+//        assertTrue("Leaderboard ", isLezderbosrdPresent());
+//        assertEquals ("", true, true);
     }
 
     @Step
-    public void is_the_home_page() {
+    public void open_home_page() {
         corePage.open();
     }
 
@@ -37,4 +41,11 @@ public class EndUserSteps extends ScenarioSteps {
         enters(term);
         starts_search();
     }
+    @Step
+    public void should_see_page(String value) {
+
+    }
+
+
+
 }

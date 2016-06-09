@@ -9,15 +9,23 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.hasItem;
 
-public class EndUserSteps extends ScenarioSteps {
+public class EndUserStepsE extends ScenarioSteps {
 
     CorePage corePage;
 
     @Step
-    public void enters(String keyword) {
-        corePage.enter_keywords(keyword);
+    public void open_home_page() {
+        corePage.open();
     }
+    @Step
+    public void open_leaderbord_page() {
+        Leaderboard leaderboard = new Leaderboard("//*[@class='nav-container']//*[contains(@href,'leaderboard')]");
+        corePage.open(leaderboard);
+    }
+    @Step
 
+    public void is_the_leaderboard_page() {
+    }
     @Step
     public void starts_search() {
         corePage.lookup_terms();
@@ -28,15 +36,12 @@ public class EndUserSteps extends ScenarioSteps {
         assertThat(corePage.getDefinitions(), hasItem(containsString(definition)));
     }
 
-    @Step
-    public void is_the_home_page() {
-        corePage.open();
-    }
 
     @Step
     public void looks_for(String title) {
         enters(title);
         starts_search();
     }
+
 
 }
