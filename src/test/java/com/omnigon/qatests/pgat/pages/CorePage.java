@@ -21,6 +21,9 @@ public class CorePage extends PageObject {
     @FindBy(name="go")
     private WebElementFacade lookupButton;
 
+    @FindBy(xpath="//*[@class='nav-container']//*[contains(@href,'leaderboard')]")
+    private WebElementFacade leaderboardMenuItem;
+
     public void enter_keywords(String keyword) {
         searchTerms.type(keyword);
     }
@@ -42,7 +45,9 @@ public class CorePage extends PageObject {
             }
         };
     }
-    public void navigate_to_leaderbord(String s) {
-        open.leaderboard
+
+
+    public void clickLeaderboardMenuItem() {
+        leaderboardMenuItem.click();
     }
 }

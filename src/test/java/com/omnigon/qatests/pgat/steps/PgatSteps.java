@@ -1,6 +1,5 @@
 package com.omnigon.qatests.pgat.steps;
 
-import com.omnigon.qatests.pages.DictionaryPage;
 import com.omnigon.qatests.pgat.pages.CorePage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
@@ -9,7 +8,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.hasItem;
 
-public class EndUserStepsE extends ScenarioSteps {
+public class PgatSteps extends ScenarioSteps {
 
     CorePage corePage;
 
@@ -17,15 +16,16 @@ public class EndUserStepsE extends ScenarioSteps {
     public void open_home_page() {
         corePage.open();
     }
-    @Step
-    public void open_leaderbord_page() {
-        Leaderboard leaderboard = new Leaderboard("//*[@class='nav-container']//*[contains(@href,'leaderboard')]");
-        corePage.open(leaderboard);
-    }
-    @Step
 
+    @Step
+    public void open_leaderboard_page() {
+        corePage.clickLeaderboardMenuItem();
+    }
+
+    @Step
     public void is_the_leaderboard_page() {
     }
+
     @Step
     public void starts_search() {
         corePage.lookup_terms();
@@ -36,12 +36,10 @@ public class EndUserStepsE extends ScenarioSteps {
         assertThat(corePage.getDefinitions(), hasItem(containsString(definition)));
     }
 
-
     @Step
     public void looks_for(String title) {
-        enters(title);
+       // enters(title);
         starts_search();
     }
-
 
 }
