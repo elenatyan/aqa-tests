@@ -24,6 +24,9 @@ public class CorePage extends PageObject {
     @FindBy(xpath="//*[@class='nav-container']//*[contains(@href,'leaderboard')]")
     private WebElementFacade leaderboardMenuItem;
 
+    @FindBy(xpath="//*[@class='name']//*[contains(@href,'tournaments')]")
+    private WebElementFacade checkTitle;
+
     public void enter_keywords(String keyword) {
         searchTerms.type(keyword);
     }
