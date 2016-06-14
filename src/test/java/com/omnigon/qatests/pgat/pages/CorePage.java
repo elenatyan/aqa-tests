@@ -27,6 +27,26 @@ public class CorePage extends PageObject {
     @FindBy(xpath="//*[@class='name']//*[contains(@href,'tournaments')]")
     private WebElementFacade checkTitle;
 
+    @FindBy(xpath="//*[@class='share-popup']//*[@class='facebook']")
+    private WebElementFacade checkFacebookIcon;
+
+    @FindBy(xpath="//*[@class='share-popup']//*[@class='twitter']")
+    private WebElementFacade checkTwitterIcon;
+
+    @FindBy(xpath="//*[@class='share-popup']//*[@class='google-plus']")
+    private WebElementFacade checkGooglePlusIcon;
+
+    @FindBy(xpath="//*[@class='share-popup']//*[@class='pinterest']")
+    private WebElementFacade checkPinterestIcon;
+
+    @FindBy(xpath="//*[@class='share-popup']//*[@class='tumblr']")
+    private WebElementFacade checkTumblrIcon;
+
+    @FindBy(xpath="//*[@class='share-popup']//*[@class='mailto'] ")
+    private WebElementFacade checkTumblrIcon;
+
+
+
     public void enter_keywords(String keyword) {
         searchTerms.type(keyword);
     }
@@ -52,5 +72,13 @@ public class CorePage extends PageObject {
 
     public void clickLeaderboardMenuItem() {
         leaderboardMenuItem.click();
+    }
+
+    public void checkTournamentTitle() {
+        checkTitle.select();
+    }
+
+    public void select() {
+
     }
 }

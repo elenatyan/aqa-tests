@@ -22,6 +22,12 @@ public class PgatSteps extends ScenarioSteps {
         corePage.clickLeaderboardMenuItem();
     }
 
+
+    @Step
+    public void observe_title() {
+        corePage.select();
+    }
+
     @Step
     public void is_the_leaderboard_page() {
     }
