@@ -33,7 +33,9 @@ public class LeaderboardTest {
     }
 
     @Test
-    public void check_title() {
+    public void observe_title() {
+        pgatSteps.is_the_leaderboard_page();
+        pgatSteps.check_title();
 //        elena.is_the_leaderboard_page();
 //        elena.looks_for("//*[@class='name']//*[contains(@href,'tournament')]");
 //        elena.should_see_page("leaderboard");
@@ -41,6 +43,8 @@ public class LeaderboardTest {
     }
     @Test
     public void check_social_icon() {
+        pgatSteps.is_the_leaderboard_page();
+        pgatSteps.check_social_icons();
 //        elena.is_the_leaderboard_page();
 //        elena.looks_for("//*[@class='popover-content']//*[@class='link-box']//*[@class='facebook']");
 //        elena.should_see_page("leaderboard");

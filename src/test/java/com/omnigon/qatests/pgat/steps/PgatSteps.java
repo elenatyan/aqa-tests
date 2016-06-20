@@ -24,9 +24,12 @@ public class PgatSteps extends ScenarioSteps {
 
 
     @Step
-    public void observe_title() {
+    public void check_title() {
         corePage.select();
     }
+    @Step
+    public void check_social_icons() {
+        corePage.select();
 
     @Step
     public void is_the_leaderboard_page() {
