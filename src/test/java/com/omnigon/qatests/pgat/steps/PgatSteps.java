@@ -25,11 +25,13 @@ public class PgatSteps extends ScenarioSteps {
 
     @Step
     public void check_title() {
+
+        String currentTitle = get.title();
+
         //corePage.select();
         //get actual title
         //check title not empty
          /*
-        corePage.select(idTitle);
 
         String nonEmpty = 'idTitle';
         String nullString = null;

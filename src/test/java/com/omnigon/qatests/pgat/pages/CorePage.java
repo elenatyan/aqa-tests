@@ -43,8 +43,6 @@ public class CorePage extends PageObject {
     private WebElementFacade checkTumblrIcon;
 
 
-
-
     public void enter_keywords(String keyword) {
         searchTerms.type(keyword);
     }
