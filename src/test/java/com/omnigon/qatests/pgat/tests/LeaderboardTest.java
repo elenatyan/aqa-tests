@@ -1,5 +1,6 @@
 package com.omnigon.qatests.pgat.tests;
 
+import com.omnigon.qatests.pgat.pages.CorePage;
 import com.omnigon.qatests.pgat.steps.PgatSteps;
 import com.omnigon.qatests.steps.serenity.EndUserSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
@@ -47,6 +48,7 @@ public class LeaderboardTest {
 //        elena.looks_for("//*[@class='popover-content']//*[@class='link-box']//*[@class='facebook']");
 //        elena.should_see_page("leaderboard");
     }
+
 
 
 }

@@ -1,6 +1,6 @@
 package com.omnigon.qatests.steps.serenity;
 
-import com.omnigon.qatests.pages.DictionaryPage;
+//import com.omnigon.qatests.pages.DictionaryPage;
 import com.omnigon.qatests.pgat.pages.CorePage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;

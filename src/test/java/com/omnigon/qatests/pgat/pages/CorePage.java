@@ -77,4 +77,7 @@ public class CorePage extends PageObject {
     public void select() {
 
     }
+    public void getCurrentTitle() {
+
+    }
 }

@@ -4,15 +4,20 @@ import com.omnigon.qatests.pgat.pages.CorePage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
+import java.text.NumberFormat;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.hasItem;
+import static org.junit.Assert.assertEquals;
 
 public class PgatSteps extends ScenarioSteps {
 
-    CorePage corePage;
+   CorePage corePage;
+
 
     @Step
+
     public void open_home_page() {
         corePage.open();
     }
@@ -26,30 +31,29 @@ public class PgatSteps extends ScenarioSteps {
     @Step
     public void check_title() {
 
-        String currentTitle = get.title();
+        //String currentTitle = get.title();
+
+            String emptyTitle = null;
+            String currentTitle = "World Golf Championships-Bridgestone Invitational";
+            //String currentTitle = CorePage.getCurrentTitle();
+
+            if (currentTitle != null && currentTitle.length() > 0) {
+                emptyTitle  = "Tournament Title is empty";
+            }
+
+            assertEquals("Tournament Title is empty", emptyTitle);
+        }
+
+
+       // http://www.leveluplunch.com/java/examples/is-string-null-or-empty/
 
         //corePage.select();
         //get actual title
         //check title not empty
          /*
 
-        String nonEmpty = 'idTitle';
-        String nullString = null;
-        String emptyString = "";
-        String[] inputs = {nonEmpty, nullString, emptyString};
-        System.out.println("**** isEmpty() method Example *****");
-        for (String s : inputs) {
-            if (s != null) {
-                System.out.println(String.format("Does String '%s' is empty? ", s) + s.isEmpty());
-            }
-
-        }
-        System.out.println("**** length() method Example *****");
-        for (String s : inputs) { if (s != null) { System.out.println(String.format("Does String '%s' is empty? ", s) + (s.length() == 0)); }
-
-            Read more: http://java67.blogspot.com/2014/09/right-way-to-check-if-string-is-empty.html#ixzz4CmkBhpLy
 */
-    }
+
 
     @Step
     public void check_social_icons() {
