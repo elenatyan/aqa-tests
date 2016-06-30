@@ -4,8 +4,6 @@ import com.omnigon.qatests.pgat.pages.CorePage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
-import java.text.NumberFormat;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.hasItem;
@@ -17,7 +15,6 @@ public class PgatSteps extends ScenarioSteps {
 
 
     @Step
-
     public void open_home_page() {
         corePage.open();
     }
@@ -34,7 +31,7 @@ public class PgatSteps extends ScenarioSteps {
         //String currentTitle = get.title();
 
             String emptyTitle = null;
-            String currentTitle = "World Golf Championships-Bridgestone Invitational";
+            String currentTitle = "World Golf Championships-Bridgestone Invitational---";
             //String currentTitle = CorePage.getCurrentTitle();
 
             if (currentTitle != null && currentTitle.length() > 0) {
