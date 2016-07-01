@@ -8,6 +8,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.hasItem;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class PgatSteps extends ScenarioSteps {
 
@@ -26,11 +27,44 @@ public class PgatSteps extends ScenarioSteps {
 
 
     @Step
-    public void check_title() {
+    public void check_title_not_empty() {
+        String header = corePage.getHeader();
+        assertTrue("Title is absent", header!=null);
+        assertTrue("Title should not be empty", header.length()!=0);
+    }
 
+    @Step
+    public void check_social_icons_is_present() {
+        corePage.getFacebookIcon();
+        corePage.getTwitterIcon();
+        corePage.getGooglePlusIcon();
+        corePage.getTumblrIcon();
+        corePage.getPinterestIcon();
+    }
+    @Step
+    public void is_the_leaderboard_page() {
+    }
+
+    @Step
+    public void starts_search() {
+        corePage.lookup_terms();
+    }
+
+    @Step
+    public void should_see_page(String definition) {
+        assertThat(corePage.getDefinitions(), hasItem(containsString(definition)));
+    }
+
+    @Step
+    public void looks_for(String title) {
+        // enters(title);
+        starts_search();
+    }
+
+}
         //String currentTitle = get.title();
 
-            String emptyTitle = null;
+            /*String emptyTitle = null;
             String currentTitle = "World Golf Championships-Bridgestone Invitational---";
             //String currentTitle = CorePage.getCurrentTitle();
 
@@ -52,28 +86,6 @@ public class PgatSteps extends ScenarioSteps {
 */
 
 
-    @Step
-    public void check_social_icons() {
-        corePage.select();
-    }
-    @Step
-    public void is_the_leaderboard_page() {
-    }
 
-    @Step
-    public void starts_search() {
-        corePage.lookup_terms();
-    }
 
-    @Step
-    public void should_see_page(String definition) {
-        assertThat(corePage.getDefinitions(), hasItem(containsString(definition)));
-    }
 
-    @Step
-    public void looks_for(String title) {
-       // enters(title);
-        starts_search();
-    }
-
-}
