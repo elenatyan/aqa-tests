@@ -21,11 +21,14 @@ public class CorePage extends PageObject {
     @FindBy(name="go")
     private WebElementFacade lookupButton;
 
+    @FindBy(name="display")
+    private WebElementFacade seachSocialIcon;
+
     @FindBy(xpath="//*[@class='nav-container']//*[contains(@href,'leaderboard')]")
     private WebElementFacade leaderboardMenuItem;
 
     @FindBy(xpath="//*[@class='name']//*[contains(@href,'tournaments')]")
-    private WebElementFacade checkTitle;
+    private WebElementFacade  header;
 
     @FindBy(xpath="//*[@class='share-popup']//*[@class='facebook']")
     private WebElementFacade checkFacebookIcon;
@@ -41,10 +44,6 @@ public class CorePage extends PageObject {
 
     @FindBy(xpath="//*[@class='share-popup']//*[@class='tumblr']")
     private WebElementFacade checkTumblrIcon;
-
-    @FindBy(xpath="//*[@class='share-popup']//*[@class='mailto'] ")
-    private WebElementFacade checkTumblrIcon;
-
 
 
     public void enter_keywords(String keyword) {
@@ -74,11 +73,24 @@ public class CorePage extends PageObject {
         leaderboardMenuItem.click();
     }
 
-    public void checkTournamentTitle() {
-        checkTitle.select();
+
+    public String getHeader() {
+        return header.getText();
     }
+    public boolean getFacebookIcon() {
 
-    public void select() {
-
+        return checkFacebookIcon.isDisplayed();
+    }
+    public boolean getTwitterIcon() {
+        return checkTwitterIcon.isDisplayed();
+    }
+    public  boolean getGooglePlusIcon() {
+        return checkGooglePlusIcon.isDisplayed();
+    }
+    public  boolean getPinterestIcon() {
+        return checkPinterestIcon.isDisplayed();
+    }
+    public  boolean getTumblrIcon() {
+        return checkTumblrIcon.isDisplayed();
     }
 }

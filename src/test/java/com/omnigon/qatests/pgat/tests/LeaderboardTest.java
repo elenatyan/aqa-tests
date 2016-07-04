@@ -1,7 +1,6 @@
 package com.omnigon.qatests.pgat.tests;
 
 import com.omnigon.qatests.pgat.steps.PgatSteps;
-import com.omnigon.qatests.steps.serenity.EndUserSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -11,7 +10,6 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 @RunWith(SerenityRunner.class)
-//@Ignore
 public class LeaderboardTest {
 
     @Managed(uniqueSession = true)
@@ -34,21 +32,14 @@ public class LeaderboardTest {
 
     @Test
     public void observe_title() {
-        pgatSteps.is_the_leaderboard_page();
-        pgatSteps.check_title();
-//        elena.is_the_leaderboard_page();
-//        elena.looks_for("//*[@class='name']//*[contains(@href,'tournament')]");
-//        elena.should_see_page("leaderboard");
+        pgatSteps.check_title_not_empty();
 
     }
     @Test
-    public void check_social_icon() {
-        pgatSteps.is_the_leaderboard_page();
-        pgatSteps.check_social_icons();
-//        elena.is_the_leaderboard_page();
-//        elena.looks_for("//*[@class='popover-content']//*[@class='link-box']//*[@class='facebook']");
-//        elena.should_see_page("leaderboard");
+    public void check_social_icons() {
+        pgatSteps.check_social_icons_is_present();
     }
+
 
 
 }
