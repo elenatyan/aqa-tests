@@ -34,13 +34,42 @@ public class PgatSteps extends ScenarioSteps {
     }
 
     @Step
-    public void check_social_icons_is_present() {
-        corePage.getFacebookIcon();
-        corePage.getTwitterIcon();
+    public void check_facebook_social_icons_is_present() {
+        corePage.isFacebookIconDisplayed();
+        assertTrue("Facebook Icon is absent", corePage.isFacebookIconDisplayed());
+
+    }
+    @Step
+    public void check_twitter_social_icon_is_present(){
+        corePage.isTwitterIconDisplayed();
+        assertTrue("Twitter Icon is absent", corePage.isTwitterIconDisplayed());
+    }
+
+    @Step
+    public void check_googlePlus_social_icon_is_present(){
+        corePage.isGooglePlusIconDisplayed();
+        assertTrue("GooglePlus Icon is absent", corePage.isGooglePlusIconDisplayed());
+    }
+    @Step
+    public void check_pinterestIcon_social_icon_is_present(){
+        corePage.isPinterestIconDisplayed();
+        assertTrue("Pinterest Icon is absent", corePage.isPinterestIconDisplayed());
+    }
+
+    @Step
+    public void check_tumblrIcon_social_icon_is_present(){
+        corePage.isTumblrIconDisplayed();
+        assertTrue("Tumblr Icon is absent", corePage.isTumblrIconDisplayed());
+    }
+
+
+       /* corePage.getTwitterIcon();
         corePage.getGooglePlusIcon();
         corePage.getTumblrIcon();
         corePage.getPinterestIcon();
-    }
+        */
+
+
     @Step
     public void is_the_leaderboard_page() {
     }

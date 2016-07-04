@@ -77,8 +77,28 @@ public class CorePage extends PageObject {
     public String getHeader() {
         return header.getText();
     }
-    public boolean getFacebookIcon() {
 
+    public boolean isFacebookIconDisplayed() {
+        return checkFacebookIcon.isDisplayed();
+
+    }
+    public boolean isTwitterIconDisplayed() {
+        return checkTwitterIcon.isDisplayed();
+
+    }
+    public boolean isGooglePlusIconDisplayed() {
+        return checkGooglePlusIcon.isDisplayed();
+
+    }
+    public boolean isPinterestIconDisplayed() {
+        return checkPinterestIcon.isDisplayed();
+
+    }
+    public boolean isTumblrIconDisplayed() {
+        return checkTumblrIcon.isDisplayed();
+
+    }
+    public boolean getFacebookIcon() {
         return checkFacebookIcon.isDisplayed();
     }
     public boolean getTwitterIcon() {

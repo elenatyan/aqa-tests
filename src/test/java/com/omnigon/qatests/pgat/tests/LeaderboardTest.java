@@ -33,14 +33,27 @@ public class LeaderboardTest {
     @Test
     public void observe_title() {
         pgatSteps.check_title_not_empty();
-
     }
     @Test
-    public void check_social_icons() {
-        pgatSteps.check_social_icons_is_present();
+    public void check_facebook_social_icon() {
+        pgatSteps.check_facebook_social_icons_is_present();
     }
-
-
+    @Test
+    public void check_twitter_social_icon() {
+        pgatSteps.check_twitter_social_icon_is_present();
+    }
+    @Test
+    public void check_googlePlus_social_icon() {
+        pgatSteps.check_googlePlus_social_icon_is_present();
+    }
+    @Test
+    public void check_pinterestIcon_social_icon() {
+        pgatSteps.check_pinterestIcon_social_icon_is_present();
+    }
+    @Test
+    public void check_tumblrIcon_social_icon() {
+        pgatSteps.check_tumblrIcon_social_icon_is_present();
+    }
 
 }
    /*
