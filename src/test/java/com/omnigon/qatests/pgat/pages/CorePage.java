@@ -30,19 +30,19 @@ public class CorePage extends PageObject {
     @FindBy(xpath="//*[@class='name']//*[contains(@href,'tournaments')]")
     private WebElementFacade  header;
 
-    @FindBy(xpath="//*[@class='share-popup']//*[@class='facebook']")
+    @FindBy(xpath="//*[@class='info']//*[@class='share-popup']//*[@class='facebook']")
     private WebElementFacade checkFacebookIcon;
 
-    @FindBy(xpath="//*[@class='share-popup']//*[@class='twitter']")
+    @FindBy(xpath="//*[@class='info']//*[@class='share-popup']//*[@class='twitter']")
     private WebElementFacade checkTwitterIcon;
 
-    @FindBy(xpath="//*[@class='share-popup']//*[@class='google-plus']")
+    @FindBy(xpath="//*[@class='info']//*[@class='share-popup']//*[@class='google-plus']")
     private WebElementFacade checkGooglePlusIcon;
 
-    @FindBy(xpath="//*[@class='share-popup']//*[@class='pinterest']")
+    @FindBy(xpath="//*[@class='info']//*[@class='share-popup']//*[@class='pinterest']")
     private WebElementFacade checkPinterestIcon;
 
-    @FindBy(xpath="//*[@class='share-popup']//*[@class='tumblr']")
+    @FindBy(xpath="//*[@class='info']//*[@class='share-popup']//*[@class='tumblr']")
     private WebElementFacade checkTumblrIcon;
 
 

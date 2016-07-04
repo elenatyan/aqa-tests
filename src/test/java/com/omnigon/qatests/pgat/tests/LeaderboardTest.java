@@ -4,6 +4,7 @@ import com.omnigon.qatests.pgat.steps.PgatSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,33 +24,38 @@ public class LeaderboardTest {
         System.setProperty("webdriver.chrome.driver", "C:\\selenium\\chromedriver.exe");
     }
 
-    @Test
-    public void click_by_menu_leaderboard_should_display_the_corresponding_page() {
+    @Before
+    public void openPage(){
         pgatSteps.open_home_page();
         pgatSteps.open_leaderboard_page();
-
     }
+
 
     @Test
     public void observe_title() {
         pgatSteps.check_title_not_empty();
     }
+
     @Test
     public void check_facebook_social_icon() {
         pgatSteps.check_facebook_social_icons_is_present();
     }
+
     @Test
     public void check_twitter_social_icon() {
         pgatSteps.check_twitter_social_icon_is_present();
     }
+
     @Test
     public void check_googlePlus_social_icon() {
         pgatSteps.check_googlePlus_social_icon_is_present();
     }
+
     @Test
     public void check_pinterestIcon_social_icon() {
         pgatSteps.check_pinterestIcon_social_icon_is_present();
     }
+
     @Test
     public void check_tumblrIcon_social_icon() {
         pgatSteps.check_tumblrIcon_social_icon_is_present();
