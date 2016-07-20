@@ -113,4 +113,7 @@ public class CorePage extends PageObject {
     public  boolean getTumblrIcon() {
         return checkTumblrIcon.isDisplayed();
     }
+
+
+
 }
