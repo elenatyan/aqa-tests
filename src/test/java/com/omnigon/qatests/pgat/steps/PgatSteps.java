@@ -68,10 +68,12 @@ public class PgatSteps extends ScenarioSteps {
             System.out.println("Started test");
             String header = corePage.getHeader();
             softAssert.assertThat(corePage.getHeader()).as("Title is absent").isEmpty();
-            softAssert.assertThat(corePage.getHeader().length()!= 0).as("Title should not be empty").isEmpty ();
-
-             /*
-            softAssert.assertThat(corePage.getHeader().length()!= 0)).as("Title should not be empty").isEqualTo(true);
+            softAssert.assertThat("Title should not be empty").isEmply().(corePage.getHeader().length()!= 0);
+          ///(actual = boolean, expected )
+          //
+          //
+          // /*
+            softAssert.assertThat(corePage.getHeader().length() != 0)).as("Title should not be empty").isEqualTo(true);
             softAssert.assertThat(corePage.isFacebookIconDisplayed()).as("Facebook Icon is absent").isEqualTo(true);
             softAssert.assertThat(corePage.isTwitterIconDisplayed()).as("Twitter Icon is absent").isEqualTo(true);
             softAssert.assertThat(corePage.isGooglePlusIconDisplayed()).as("GooglePlus Icon is absent").isEqualTo(true);
