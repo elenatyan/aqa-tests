@@ -4,11 +4,15 @@ import com.omnigon.qatests.pgat.pages.CorePage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.hasItem;
+import org.assertj.core.api.JUnitSoftAssertions;
+import org.junit.Rule;
+
+import static org.junit.Assert.assertTrue;
+
 
 public class PgatSteps extends ScenarioSteps {
+    @Rule
+    public final JUnitSoftAssertions softAssert = new JUnitSoftAssertions();
 
     CorePage corePage;
 
@@ -24,31 +28,59 @@ public class PgatSteps extends ScenarioSteps {
 
 
     @Step
-    public void check_title() {
-        corePage.select();
-    }
-    @Step
-    public void check_social_icons() {
-        corePage.select();
-
-    @Step
-    public void is_the_leaderboard_page() {
+    public void check_title_not_empty() {
+        String header = corePage.getHeader();
+        assertTrue("Title is absent", header != null);
+        assertTrue("Title should not be empty", header.length() != 0);
     }
 
     @Step
-    public void starts_search() {
-        corePage.lookup_terms();
+    public void check_facebook_social_icons_is_present() {
+        assertTrue("Facebook Icon is absent", corePage.isFacebookIconDisplayed());
+
     }
 
     @Step
-    public void should_see_page(String definition) {
-        assertThat(corePage.getDefinitions(), hasItem(containsString(definition)));
+    public void check_twitter_social_icon_is_present() {
+        assertTrue("Twitter Icon is absent", corePage.isTwitterIconDisplayed());
     }
 
     @Step
-    public void looks_for(String title) {
-       // enters(title);
-        starts_search();
+    public void check_googlePlus_social_icon_is_present() {
+        assertTrue("GooglePlus Icon is absent", corePage.isGooglePlusIconDisplayed());
     }
 
+    @Step
+    public void check_pinterestIcon_social_icon_is_present() {
+        assertTrue("Pinterest Icon is absent", corePage.isPinterestIconDisplayed());
+    }
+
+    @Step
+    public void check_tumblrIcon_social_icon_is_present() {
+        assertTrue("Tumblr Icon is absent", corePage.isTumblrIconDisplayed());
+    }
+
+    ///Try to implement via SoftAssert
+
+        @Step
+        public void fSoftAssertion() {
+
+            System.out.println("Started test");
+            String header = corePage.getHeader();
+            softAssert.assertThat(corePage.getHeader()).as("Title is absent").isNotEmpty();
+            softAssert.assertThat(corePage.isFacebookIconDisplayed()).as("Facebook Icon is absent").isEqualTo(true);
+            softAssert.assertThat(corePage.isTwitterIconDisplayed()).as("Twitter Icon is absent").isEqualTo(true);
+            softAssert.assertThat(corePage.isGooglePlusIconDisplayed()).as("GooglePlus Icon is absent").isEqualTo(true);
+            softAssert.assertThat(corePage.isPinterestIconDisplayed()).as("Pinterest Icon is absent").isEqualTo(true);
+            softAssert.assertThat(corePage.isTumblrIconDisplayed()).as("Tumblr Icon is absent").isEqualTo(true);
+
+       }
 }
+
+
+
+
+
+
+
+

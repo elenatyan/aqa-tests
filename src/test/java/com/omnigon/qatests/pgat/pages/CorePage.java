@@ -21,30 +21,29 @@ public class CorePage extends PageObject {
     @FindBy(name="go")
     private WebElementFacade lookupButton;
 
+    @FindBy(name="display")
+    private WebElementFacade seachSocialIcon;
+
     @FindBy(xpath="//*[@class='nav-container']//*[contains(@href,'leaderboard')]")
     private WebElementFacade leaderboardMenuItem;
 
     @FindBy(xpath="//*[@class='name']//*[contains(@href,'tournaments')]")
-    private WebElementFacade checkTitle;
+    private WebElementFacade  header;
 
-    @FindBy(xpath="//*[@class='share-popup']//*[@class='facebook']")
+    @FindBy(xpath="//*[@class='info']//*[@class='share-popup']//*[@class='facebook']")
     private WebElementFacade checkFacebookIcon;
 
-    @FindBy(xpath="//*[@class='share-popup']//*[@class='twitter']")
+    @FindBy(xpath="//*[@class='info']//*[@class='share-popup']//*[@class='twitter']")
     private WebElementFacade checkTwitterIcon;
 
-    @FindBy(xpath="//*[@class='share-popup']//*[@class='google-plus']")
+    @FindBy(xpath="//*[@class='info']//*[@class='share-popup']//*[@class='google-plus']")
     private WebElementFacade checkGooglePlusIcon;
 
-    @FindBy(xpath="//*[@class='share-popup']//*[@class='pinterest']")
+    @FindBy(xpath="//*[@class='info']//*[@class='share-popup']//*[@class='pinterest']")
     private WebElementFacade checkPinterestIcon;
 
-    @FindBy(xpath="//*[@class='share-popup']//*[@class='tumblr']")
+    @FindBy(xpath="//*[@class='info']//*[@class='share-popup']//*[@class='tumblr']")
     private WebElementFacade checkTumblrIcon;
-
-    @FindBy(xpath="//*[@class='share-popup']//*[@class='mailto'] ")
-    private WebElementFacade checkTumblrIcon;
-
 
 
     public void enter_keywords(String keyword) {
@@ -74,11 +73,47 @@ public class CorePage extends PageObject {
         leaderboardMenuItem.click();
     }
 
-    public void checkTournamentTitle() {
-        checkTitle.select();
+
+    public String getHeader() {
+        return header.getText();
     }
 
-    public void select() {
+    public boolean isFacebookIconDisplayed() {
+        return checkFacebookIcon.isDisplayed();
 
     }
+    public boolean isTwitterIconDisplayed() {
+        return checkTwitterIcon.isDisplayed();
+
+    }
+    public boolean isGooglePlusIconDisplayed() {
+        return checkGooglePlusIcon.isDisplayed();
+
+    }
+    public boolean isPinterestIconDisplayed() {
+        return checkPinterestIcon.isDisplayed();
+
+    }
+    public boolean isTumblrIconDisplayed() {
+        return checkTumblrIcon.isDisplayed();
+
+    }
+    public boolean getFacebookIcon() {
+        return checkFacebookIcon.isDisplayed();
+    }
+    public boolean getTwitterIcon() {
+        return checkTwitterIcon.isDisplayed();
+    }
+    public  boolean getGooglePlusIcon() {
+        return checkGooglePlusIcon.isDisplayed();
+    }
+    public  boolean getPinterestIcon() {
+        return checkPinterestIcon.isDisplayed();
+    }
+    public  boolean getTumblrIcon() {
+        return checkTumblrIcon.isDisplayed();
+    }
+
+
+
 }
